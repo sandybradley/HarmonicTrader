@@ -1,5 +1,27 @@
 # pyHarmonicTrader
 
+Automated harmonic pattern spotter and trader in Deribit. Built for Bitcoin to run in conjunction with https://github.com/sandybradley/qTrends.
+
+# Pre-requisites
+
+Python 3.6 +
+
+pip install pandas
+pip install numpy 
+pip install scipy 
+pip install matplotlib 
+pip install apscheduler 
+
+# Run
+
+Backtest
+
+python peaks.py
+
+Trading
+
+python deribit_harmonics.py
+
 
 # Karma Jar
 
