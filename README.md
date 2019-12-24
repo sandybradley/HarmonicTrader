@@ -1,26 +1,7 @@
-# QMonitor
+# pyHarmonicTrader
 
-Real-time directional trade volume for bitcoin to fiat markets on Binance, Bitfinex, Bitstamp, Kraken and CoinbasePro, written in KDB+.
 
-Bittrex, Poloniex and Gemini to be included. The focus of this script is to enable real-time monitor of spot trades between bitcoin and fiat currencies. I have used the largest exchanges by 24 hour volume without fake volume reports. 
-
-Real-time logging in the trades table enables real-time signals and triggers. See https://github.com/sandybradley/qSignals.
-
-Pre-requisites:
-
-KDB+ (https://kx.com/connect-with-us/download/)
-
-Start with:
-
-\l qmonitor.q
-
-View trades table
-
-http://localhost:5010/
-
-WARNING - live trade monitoring consumes alot of bandwidth and logging takes alot of storage. Please monitor and adjust accordingly.
-
-# Karma jar
+# Karma Jar
 
 BTC - 112eMCQJUkUz7kvxDSFCGf1nnFJZ61CE4W
 
