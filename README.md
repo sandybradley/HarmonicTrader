@@ -7,9 +7,13 @@ Automated harmonic pattern spotter and trader in Deribit. Built for Bitcoin to r
 Python 3.6 +
 
 pip install pandas
+
 pip install numpy 
+
 pip install scipy 
+
 pip install matplotlib 
+
 pip install apscheduler 
 
 # Run
