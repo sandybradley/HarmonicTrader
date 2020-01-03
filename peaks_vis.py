@@ -11,7 +11,7 @@ data = pd.read_csv('candleminutely.csv')
 
 data.time = pd.to_datetime(data.time,format='%Y-%m-%dD%H:%M:%S.%f')
 data.index = data['time']
-data = data.drop_duplicates(keep=False)
+# data = data.drop_duplicates(keep=False)
 
 price = data.close.copy()
 
@@ -22,7 +22,7 @@ trade_dates=[]
 correct_pats=0
 pats=0
 
-plt.ion()
+# plt.ion()
 
 for i in range (100,len(price)):
         
@@ -58,32 +58,32 @@ for i in range (100,len(price)):
                 pats+=1
                 sense = 'Bearish ' if harmonics[j]==-1 else 'Bullish '
                 label = sense + labels[j] + ' found' 
+                print(label)
+                # start = np.array(current_idx).min()
+                # end = np.array(current_idx).max()
+                # date = data.iloc[end].name
+                # trade_dates = np.append(trade_dates,date)
 
-                start = np.array(current_idx).min()
-                end = np.array(current_idx).max()
-                date = data.iloc[end].name
-                trade_dates = np.append(trade_dates,date)
+                # pips = walk_forward(price.values[end:],harmonics[j])
 
-                pips = walk_forward(price.values[end:],harmonics[j])
+                # pnl = np.append(pnl,pips)
 
-                pnl = np.append(pnl,pips)
+                # cumpips = pnl.cumsum()
 
-                cumpips = pnl.cumsum()
+                # if pips>0:
+                #     correct_pats+=1
 
-                if pips>0:
-                    correct_pats+=1
+                # lbl = 'Accuracy ' + str(100*float(correct_pats)/float(pats)) + ' %'
 
-                lbl = 'Accuracy ' + str(100*float(correct_pats)/float(pats)) + ' %'
+                # plt.clf()
+                # plt.plot(cumpips,label=lbl)
+                # plt.legend()
+                # plt.pause(5.05)
 
-                plt.clf()
-                plt.plot(cumpips,label=lbl)
-                plt.legend()
-                plt.pause(5.05)
-
-                # plt.title(label)
-                # plt.plot(np.arange(start,i+15),price.values[start:i+15])
-                # plt.scatter(current_idx,current_pat,c='r')
-                # plt.show()
+                plt.title(label)
+                plt.plot(np.arange(start,i+15),price.values[start:i+15])
+                plt.scatter(current_idx,current_pat,c='r')
+                plt.show()
 
 
 # peaks = price.values[idx]
