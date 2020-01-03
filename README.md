@@ -14,9 +14,19 @@ pip install apscheduler
 
 # Run
 
-Backtest
+Visual backtest
+
+python peaks_vis.py
+
+![Harmonic pattern](visual.png)
+
+![Harmonic pattern](visual2.png)
+
+Trade backtest
 
 python peaks.py
+
+![PNL](pnl.png)
 
 Trading
 
