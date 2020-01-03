@@ -168,3 +168,25 @@ def walk_forward(price,sign,slippage=10.0,stop=150.0):
                 stop_loss = price[i] + stop
             elif price[i] > stop_loss:
                 return  price[0] - stop_loss - slippage
+
+def is_cyph(moves,err_allowed):
+    XA=moves[0]
+    AB=moves[1]
+    BC=moves[2]
+    CD=moves[3]
+
+    retVal = np.NAN
+
+    AB_range = np.array([0.382 - err_allowed,0.618 + err_allowed]) * abs(XA)
+    BC_range = np.array([1.13 - err_allowed,1.414 + err_allowed]) * abs(AB)
+    CD_range = np.array([1.272 - err_allowed,2.0 + err_allowed]) * abs(BC)
+    
+    
+    if XA > 0 and AB < 0 and BC > 0 and CD < 0:
+        if AB_range[0] < abs(AB) < AB_range[1] and BC_range[0] < abs(BC) < BC_range[1] and CD_range[0] < abs(CD) < CD_range[1]:
+            retVal = 1
+    elif XA < 0  and AB > 0 and BC < 0 and CD > 0:
+        if AB_range[0] < abs(AB) < AB_range[1] and BC_range[0] < abs(BC) < BC_range[1] and CD_range[0] < abs(CD) < CD_range[1]:
+            retVal = -1
+
+    return retVal
